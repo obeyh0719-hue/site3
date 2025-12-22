@@ -23,9 +23,16 @@ a {
 }
 
 header {
+    top: 0;
+    backdrop-filter:blur(10px);
+    background: #fff8;
+    z-index: 10;
+    position: fixed;
     margin: 0 auto;
-    width: 1400px;
+    width: 100%;
+    box-shadow: 0 0 20px #0004;
 }
+header.scrolled{top: -30px;}
 
 #top {
     display: flex;
@@ -57,6 +64,9 @@ header .inner {
     justify-content: space-between;
     display: flex;
     align-items: center;
+}
+header.scrolled .inner{
+    height: 80px;
 }
 
 header #gnb>ul {
@@ -212,8 +222,11 @@ main .inner {
 }
 
 #notice {
+    transform: translateX(-100%); opacity: 0;
     width: 50%;
+    transition: all .4s;
 }
+.active #notice{transform: translateX(0); opacity: 1;}
 
 #notice h2 {
     font-size: 30px;
@@ -283,9 +296,13 @@ main .inner {
 }
 
 #civil {
-
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all .4s;
     width: 50%;
 }
+.active #civil{transform: translateX(0); opacity: 1;}
+
 
 #civil h2 {
     font-size: 30px;
