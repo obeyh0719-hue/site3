@@ -178,7 +178,6 @@ header #gnb li .sub a:hover:before {
 main .inner {
     width: 1400px;
     margin: 0 auto;
-    border: 5px solid #000;
 }
 
 #main_veiw{
@@ -417,7 +416,15 @@ h2 {
 
 #online li {
     width: calc((100% - 40px * 3) / 4);
+    transform: translateY(100px); opacity: 0;
+    transition: all .6s;
 }
+#online.show li{
+    transform: translateY(0); opacity: 1;
+}
+#online li:nth-child(2){transition-delay: 0.1s;}
+#online li:nth-child(3){transition-delay: 0.2s;}
+#online li:nth-child(4){transition-delay: 0.3s;}
 
 #online .imgbox {
     border: 1px solid #ddd;
@@ -521,7 +528,6 @@ h2 {
 #community {
     width: 1400px;
     margin: 0 auto;
-    outline: 2px solid #00f;
     position: relative;
 }
 
